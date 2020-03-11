@@ -73,11 +73,19 @@ jobs:
           xvfb-run --auto-servernum npx testcafe ${{ matrix.browser }}:headless test/browser/**
 
       - name: Teardown
+        if: always()
         run: |
           xvfb_pids=`ps aux | grep tmp/xvfb-run | grep -v grep | awk '{print $2}'`
           if [ "$xvfb_pids" != "" ]; then
             sudo kill $xvfb_pids
           fi
+
+      - name: Upload
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: Ubuntu ${{ matrix.browser }} screenshots
+          path: test/screenshots/results
 
   Test_Browser_Windows:
     name: Test (${{ matrix.browser }} on windows)
@@ -105,6 +113,13 @@ jobs:
 
       - name: Test
         run: npx testcafe ${{ matrix.browser }} test/browser/**
+
+      - name: Upload
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: Windows ${{ matrix.browser }} screenshots
+          path: test/screenshots/results
 
   Build:
     runs-on: ubuntu-latest
