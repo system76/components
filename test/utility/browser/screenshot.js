@@ -4,9 +4,9 @@
  */
 
 import * as fs from 'fs'
+import looksSame from 'looks-same'
 import { uptime } from 'os'
 import * as path from 'path'
-import looksSame from 'looks-same'
 
 const abs = (name) => path.resolve(__dirname, '../../screenshots', name)
 const tempFile = () => `tmp/${uptime()}.png`

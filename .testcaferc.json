@@ -1,5 +1,5 @@
 {
-  "appCommand": "start-storybook --ci --docs --port 9427 --quiet",
+  "appCommand": "start-storybook --ci --docs --port 9476 --quiet",
   "appInitDelay": 10000,
   "concurrency": 1,
   "screenshots": {

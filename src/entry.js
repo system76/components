@@ -1,6 +1,6 @@
 /**
  * src/entry.js
- * Global document entry point for @system76/forms. This file is used for a
+ * Global document entry point for @system76/components. This file is used for a
  * browser entry point.
  */
 

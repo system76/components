@@ -3,7 +3,7 @@ import { Selector } from 'testcafe'
 import { assertScreenshot } from '../../utility/browser'
 
 fixture`SysOmnibar With Everything`
-  .page`http://localhost:9427/iframe.html?id=components-sysomnibar--with-everything&viewMode=story`
+  .page`http://localhost:9476/iframe.html?id=components-sysomnibar--with-everything&viewMode=story`
 
 const omnibar = Selector('header')
 

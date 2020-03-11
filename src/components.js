@@ -1,6 +1,6 @@
 /**
  * src/components.js
- * Exports a bunch of helpful System76 form related components
+ * Exports a bunch of helpful System76 components
  */
 
-export { default as SysFormButton } from './components/sys-form-button.vue'
+export { default as SysOmnibar } from './components/sys-omnibar.vue'
