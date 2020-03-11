@@ -6,15 +6,15 @@
 import * as fs from 'fs'
 import { uptime } from 'os'
 import * as path from 'path'
-import Rembrandt from 'rembrandt'
+import looksSame from 'looks-same'
 
-const resolve = (name) => path.resolve(__dirname, '../../screenshots', name)
+const abs = (name) => path.resolve(__dirname, '../../screenshots', name)
 const tempFile = () => `tmp/${uptime()}.png`
 const fixtureFile = (name) => `tests/${name}.png`
 
 function fileExists (path) {
   return new Promise((resolve, reject) => {
-    fs.stat(resolve(path), (err, stat) => {
+    fs.stat(abs(path), (err, stat) => {
       if (err == null) {
         return resolve(stat.isFile())
       } else if (err.code === 'ENOENT') {
@@ -26,7 +26,7 @@ function fileExists (path) {
   })
 }
 
-async function takeFixtureScreenshot (t, el, path) {
+async function takeScreenshot (t, el, path) {
   await t.takeElementScreenshot(el, path, {
     includeBorders: true,
     includeMargins: false,
@@ -41,24 +41,24 @@ export async function assertScreenshot (t, el, name) {
   const fixtureExists = await fileExists(fixture)
 
   if (fixtureExists) {
-    const currentImage = await takeFixtureScreenshot(t, el, tempFile())
+    const currentImage = await takeScreenshot(t, el, tempFile())
 
-    const rembrandt = new Rembrandt({
-      imageA: resolve(fixture),
-      imageB: resolve(currentImage),
+    const options = {
+      ignoreAntialiasing: true
+    }
 
-      thresholdType: Rembrandt.THRESHOLD_PERCENT,
-      maxThreshold: 0.01,
-      maxDelta: 20,
-      maxOffset: 0
+    const result = await new Promise((resolve, reject) => {
+      looksSame(abs(fixture), abs(currentImage), options, (err, data) => {
+        if (err != null) {
+          return reject(err)
+        } else {
+          return resolve(data)
+        }
+      })
     })
 
-    const result = await rembrandt.compare()
-
-    if (!result.passed) {
-      throw new Error('Image did not pass test threshold')
-    }
+    await t.expect(result.equal).ok(`Current screenshot matches ${name}`)
   } else {
-    await takeFixtureScreenshot(t, el, fixture)
+    await takeScreenshot(t, el, fixture)
   }
 }

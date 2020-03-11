@@ -2,8 +2,8 @@ import { Selector } from 'testcafe'
 
 import { assertScreenshot } from '../../utility/browser'
 
-fixture`SysOmnibar With Copy`
-  .page`http://localhost:9427/iframe.html?id=components-sysomnibar--with-copy&viewMode=story`
+fixture`SysOmnibar With Everything`
+  .page`http://localhost:9427/iframe.html?id=components-sysomnibar--with-everything&viewMode=story`
 
 const omnibar = Selector('header')
 
@@ -14,6 +14,6 @@ test('screenshots', async (t) => {
   // eslint-disable-next-line no-unused-vars
   for (const width of widths) {
     await t.resizeWindow(width, 800)
-    await assertScreenshot(t, omnibar, `sys-omnibar/with-copy-${width}`)
+    await assertScreenshot(t, omnibar, `sys-omnibar/with-everything-${width}`)
   }
 })
