@@ -1,0 +1,9 @@
+:root {
+  --color-omnibar-background: rgba(87, 79, 74, 0.8);
+  --color-omnibar-border: #fff;
+  --color-omnibar-foreground: #fff;
+  --color-omnibar-accent: #faa41a;
+
+  --breakpoint-content: 1280px;
+  --breakpoint-padding: 1rem;
+}

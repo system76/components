@@ -1,0 +1,120 @@
+{
+  "name": "@system76/components",
+  "version": "0.0.0-development",
+  "description": "System76 standard Vue components",
+  "author": "System76 <hosting@system76.com> (https://system76.com)",
+  "license": "GPL-3.0",
+  "main": "dist/index.common.js",
+  "web": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "jsnext:main": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "source": "src/index.js",
+  "scripts": {
+    "start": "start-storybook",
+    "build": "npm run build:library && npm run build:storybook",
+    "build:library": "NODE_ENV=production rollup -c",
+    "build:storybook": "build-storybook -o docs",
+    "lint": "npm run lint:js",
+    "lint:fix": "npm run lint:js:fix",
+    "lint:js": "eslint --ext js,vue --ignore-path .gitignore .",
+    "lint:js:fix": "eslint --fix --ext js,vue --ignore-path .gitignore .",
+    "test": "ava",
+    "commit": "git-cz",
+    "release": "semantic-release"
+  },
+  "homepage": "https://components.origin76.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/system76/components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/system76/components/issues"
+  },
+  "keywords": [
+    "components",
+    "frontend",
+    "system76",
+    "vue"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@system76/design": "^4.0.0 || ^5.0.0"
+  },
+  "devDependencies": {
+    "@ava/babel": "^1.0.0",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
+    "@storybook/addon-a11y": "^5.3.12",
+    "@storybook/addon-backgrounds": "^5.3.12",
+    "@storybook/addon-centered": "^5.3.12",
+    "@storybook/addon-knobs": "^5.3.12",
+    "@storybook/addon-viewport": "^5.3.12",
+    "@storybook/vue": "^5.3.12",
+    "@system76/eslint-config": "^2.0.0",
+    "@vue/babel-preset-app": "^4.1.2",
+    "@vue/test-utils": "^1.0.0-beta.31",
+    "ava": "^3.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "browser-env": "^3.3.0",
+    "commitizen": "^4.0.3",
+    "css-loader": "^3.4.2",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.8.0",
+    "postcss-color-mod-function": "^3.0.3",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "require-extension-hooks": "^0.3.3",
+    "require-extension-hooks-babel": "^1.0.0",
+    "require-extension-hooks-vue": "^3.0.0",
+    "rollup": "^1.29.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-css-only": "^2.0.0",
+    "rollup-plugin-postcss": "^2.0.4",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "semantic-release": "^16.0.3",
+    "vue": "^2.6.11",
+    "vue-docgen-api": "^4.13.1",
+    "vue-docgen-loader": "^1.5.0",
+    "vue-loader": "^15.8.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "ava": {
+    "babel": {
+      "compileAsTests": [
+        "./test/_browser.js",
+        "./test/_setup.js"
+      ]
+    },
+    "require": [
+      "./test/_browser.js",
+      "./test/_setup.js"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
