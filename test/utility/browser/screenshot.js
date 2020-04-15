@@ -24,7 +24,7 @@ const fixtureFile = (name) => `tests/${name}.png`
 export async function takeScreenshot (el, p) {
   await t.takeElementScreenshot(el, p, {
     includeBorders: true,
-    includeMargins: false,
+    includeMargins: true,
     includePaddings: true
   })
 

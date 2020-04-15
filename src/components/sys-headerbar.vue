@@ -162,8 +162,8 @@
       "pages";
     grid-template-columns: auto;
     grid-template-rows: auto;
-    padding: 0 1rem;
-    margin: 1rem auto;
+    padding: 1rem;
+    margin: 0 auto;
     max-width: 1280px;
   }
 
@@ -177,7 +177,7 @@
   }
 
   .logo {
-    max-width: 200px;
+    max-width: 22ch;
   }
 
   .pages {
@@ -251,7 +251,7 @@
       grid-template-areas:
         "logo quicks"
         "pages pages";
-      grid-template-columns: 200px auto;
+      grid-template-columns: 22ch auto;
       grid-template-rows: auto;
     }
   }
@@ -259,7 +259,7 @@
   @media (width >= 920px) {
     .nav {
       grid-template-areas: "logo pages quicks";
-      grid-template-columns: 200px 1fr auto;
+      grid-template-columns: 22ch 1fr auto;
     }
 
     .pages {
