@@ -14,6 +14,6 @@ test('screenshots', async (t) => {
   // eslint-disable-next-line no-unused-vars
   for (const width of widths) {
     await t.resizeWindow(width, 800)
-    await assertScreenshot(t, header, `sys-headerbar/not-logged-in-${width}`)
+    await assertScreenshot(header, `sys-headerbar/not-logged-in-${width}`)
   }
 })
