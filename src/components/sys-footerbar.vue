@@ -271,7 +271,7 @@
     font-size: 0.675rem;
   }
 
-  @media (width >= 50rem) {
+  @media (min-width: 50rem) {
     .links {
       flex: 0 0 15rem;
     }
@@ -282,7 +282,7 @@
     }
   }
 
-  @media (width >= 60rem) {
+  @media (min-width: 60rem) {
     .social {
       font-size: 2.2rem;
       height: 64px;
@@ -290,7 +290,7 @@
     }
   }
 
-  @media (width >= 1280px) {
+  @media (min-width: 1280px) {
     .socials {
       margin: -0.5rem;
     }

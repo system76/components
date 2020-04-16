@@ -174,6 +174,7 @@ export default {
     grid-template-rows: 1fr;
     justify-content: stretch;
     margin: 0 auto;
+    max-width: 1280px;
     min-height: 3rem;
     padding: 0.5rem 1rem;
   }
@@ -223,7 +224,7 @@ export default {
   }
 
   /** Start of responsive mobile omnibar. Using a media query to scope CSS **/
-  @media (width < 600px) {
+  @media (max-width: 600px) {
     .content {
       grid-template-columns: 1fr 1fr;
     }
@@ -243,7 +244,7 @@ export default {
   }
 
   /** Start of responsive tablet omnibar **/
-  @media (width >= 600px) and (width < 1000px) {
+  @media (min-width: 600px) and (max-width: 1000px) {
     .content {
       grid-template-columns: 21ch auto 21ch;
     }
@@ -265,7 +266,7 @@ export default {
   }
 
   /** Start of responsive desktop omnibar **/
-  @media (width >= 1000px) {
+  @media (min-width: 1000px) {
     .content {
       grid-template-columns: 21ch auto 21ch;
     }
@@ -277,7 +278,7 @@ export default {
   }
 
   /** Sticky responsiveness */
-  @media (height >= 400px) {
+  @media (min-height: 400px) {
     header {
       position: sticky;
       top: 0;

@@ -246,7 +246,7 @@
     color: inherit;
   }
 
-  @media (width >= 450px) {
+  @media (min-width: 450px) {
     .nav {
       grid-template-areas:
         "logo quicks"
@@ -256,7 +256,7 @@
     }
   }
 
-  @media (width >= 920px) {
+  @media (min-width: 920px) {
     .nav {
       grid-template-areas: "logo pages quicks";
       grid-template-columns: 22ch 1fr auto;
@@ -276,7 +276,7 @@
     }
   }
 
-  @media (width >= 1000px) {
+  @media (min-width: 1000px) {
     .page {
       margin: 0 0.5rem;
     }
