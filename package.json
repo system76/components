@@ -51,6 +51,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@system76/design": "^5.2.1"
@@ -61,6 +62,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@storybook/addon-a11y": "^5.3.12",
