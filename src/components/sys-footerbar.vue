@@ -191,7 +191,7 @@
 <style module>
   .footer {
     background-color: var(--color-warm-gray);
-    color: var(--color-medium-gray);
+    color: var(--color-light-gray);
   }
 
   .container {
