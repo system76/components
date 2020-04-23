@@ -188,6 +188,7 @@ export default {
     align-content: center;
     align-items: center;
     appearance: none;
+    background: transparent;
     border-radius: 0.25em;
     border: 0.15em solid var(--color-omnibar-foreground);
     color: var(--color-omnibar-foreground);

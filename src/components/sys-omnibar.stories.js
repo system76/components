@@ -61,9 +61,9 @@ export const WithGlobalAndLocal = () => ({
         </a>
       </template>
       <template slot="local">
-        <a href="#">
+        <button>
           Add to cart!
-        </a>
+        </button>
       </template>
     </SysOmnibar>
   `
