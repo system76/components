@@ -245,6 +245,7 @@
     .nav {
       grid-template-areas: "logo pages quicks";
       grid-template-columns: 22ch 1fr auto;
+      grid-template-rows: auto;
     }
 
     .pages {
@@ -300,7 +301,7 @@ export default {
 
     urlHomepage: {
       type: String,
-      default: ''
+      default: '/'
     },
 
     urlLaptops: {
