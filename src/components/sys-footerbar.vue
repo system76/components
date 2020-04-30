@@ -219,7 +219,6 @@
     outline: none;
     padding: 0.5rem;
     text-decoration: none;
-    transition: box-shadow 250ms ease;
   }
 
   .socials {
@@ -241,19 +240,18 @@
     justify-content: center;
     outline: none;
     padding: 0.5rem;
-    transition: box-shadow 250ms ease;
+    transition: color 250ms ease;
     width: 48px;
   }
 
   .link:hover,
-  .link:focus,
+  .link:focus {
+    text-decoration: underline;
+  }
+
   .social:hover,
   .social:focus {
-    border-radius: 3px;
-    box-shadow:
-      inset 0 0 0 1px var(--color-orange),
-      0 0 12px var(--color-orange),
-      0 0 1px var(--color-orange);
+    color: var(--color-orange);
   }
 
   .copy {

@@ -157,11 +157,10 @@
     display: grid;
     grid-gap: 1rem;
     grid-template-areas:
-      "logo"
-      "quicks"
-      "pages";
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+      "logo auto quicks"
+      "pages pages pages";
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
     padding: 1rem;
     margin: 0 auto;
     max-width: 1280px;
@@ -172,7 +171,6 @@
     margin: -0.5rem;
     outline: none;
     padding: 0.5rem;
-    text-align: center;
     transition: box-shadow 250ms ease;
   }
 
@@ -232,11 +230,8 @@
     transition: box-shadow 250ms ease;
   }
 
-  .home:hover,
   .home:focus,
-  .page:hover,
   .page:focus,
-  .quick:hover,
   .quick:focus {
     border-radius: 3px;
     box-shadow:
@@ -244,16 +239,6 @@
       0 0 12px var(--color-orange),
       0 0 1px var(--color-orange);
     color: inherit;
-  }
-
-  @media (min-width: 450px) {
-    .nav {
-      grid-template-areas:
-        "logo quicks"
-        "pages pages";
-      grid-template-columns: 22ch auto;
-      grid-template-rows: auto;
-    }
   }
 
   @media (min-width: 920px) {
