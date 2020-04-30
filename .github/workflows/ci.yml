@@ -170,8 +170,6 @@ jobs:
       - Lint
       - Test_Unit
       - Build
-      - Test_Browser_Ubuntu
-      - Test_Browser_Windows
 
     if: github.ref == 'refs/heads/master'
 
@@ -204,8 +202,6 @@ jobs:
       - Lint
       - Test_Unit
       - Build
-      - Test_Browser_Ubuntu
-      - Test_Browser_Windows
 
     if: github.ref == 'refs/heads/master'
 
