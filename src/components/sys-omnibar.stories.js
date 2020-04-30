@@ -132,10 +132,10 @@ export const WithEverything = () => ({
         </a>
       </template>
       <template slot="copy">
-        New announcement!
+        <a href="#">Click here for extra awesome things!</a>
       </template>
       <template slot="price">
-        $999
+        <span>$999</span><span>/year</span>
       </template>
       <template slot="local">
         <a href="#">

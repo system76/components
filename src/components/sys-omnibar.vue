@@ -231,17 +231,17 @@ export default {
     }
 
     .mobile-5 { grid-template-areas: "price local"; }
-    .mobile-5 :not(.price, .local) { display: none; }
+    .mobile-5 > *:not(.price):not(.local) { display: none; }
     .mobile-4 { grid-template-areas: "global local"; }
-    .mobile-4 :not(.global, .local) { display: none; }
+    .mobile-4 > *:not(.global):not(.local) { display: none; }
     .mobile-3 { grid-template-areas: "global global"; }
-    .mobile-3 :not(.global) { display: none; }
+    .mobile-3 > *:not(.global) { display: none; }
     .mobile-2 { grid-template-areas: "local local"; }
-    .mobile-2 :not(.local) { display: none; }
+    .mobile-2 > *:not(.local) { display: none; }
     .mobile-1 { grid-template-areas: "price price"; }
-    .mobile-1 :not(.price) { display: none; }
+    .mobile-1 > *:not(.price) { display: none; }
     .mobile-0 { grid-template-areas: "copy copy"; }
-    .mobile-0 :not(.copy) { display: none; }
+    .mobile-0 > *:not(.copy) { display: none; }
   }
 
   /** Start of responsive tablet omnibar **/
@@ -251,19 +251,19 @@ export default {
     }
 
     .tablet-6 { grid-template-areas: "price price local"; }
-    .tablet-6 :not(.price, .local) { display: none; }
+    .tablet-6 > *:not(.price):not(.local) { display: none; }
     .tablet-5 { grid-template-areas: "global price price"; }
-    .tablet-5 :not(.global, .price) { display: none; }
+    .tablet-5 > *:not(.global):not(.price) { display: none; }
     .tablet-4 { grid-template-areas: "global noop local"; }
-    .tablet-4 :not(.global, .local) { display: none; }
+    .tablet-4 > *:not(.global):not(.local) { display: none; }
     .tablet-3 { grid-template-areas: "global copy copy"; }
-    .tablet-3 :not(.global, .copy) { display: none; }
+    .tablet-3 > *:not(.global):not(.copy) { display: none; }
     .tablet-2 { grid-template-areas: "price price price"; }
-    .tablet-2 :not(.price) { display: none; }
+    .tablet-2 > *:not(.price) { display: none; }
     .tablet-1 { grid-template-areas: "copy copy local"; }
-    .tablet-1 :not(.copy, .local) { display: none; }
+    .tablet-1 > *:not(.copy):not(.local) { display: none; }
     .tablet-0 { grid-template-areas: "copy copy copy"; }
-    .tablet-0 :not(.copy) { display: none; }
+    .tablet-0 > *:not(.copy) { display: none; }
   }
 
   /** Start of responsive desktop omnibar **/
@@ -273,9 +273,9 @@ export default {
     }
 
     .desktop-1 { grid-template-areas: "global price local"; }
-    .desktop-1 :not(.global, .price, .local) { display: none; }
+    .desktop-1 > *:not(.global):not(.price):not(.local) { display: none; }
     .desktop-0 { grid-template-areas: "global copy local"; }
-    .desktop-0 :not(.global, .copy, .local) { display: none; }
+    .desktop-0 > *:not(.global):not(.copy):not(.local) { display: none; }
   }
 
   /** Sticky responsiveness */
