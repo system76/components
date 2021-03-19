@@ -392,7 +392,7 @@ export default {
 
     showNewsletterButton: {
       type: Boolean,
-      default: true
+      default: false
     },
 
     urlContact: {
