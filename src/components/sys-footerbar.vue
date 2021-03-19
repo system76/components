@@ -114,7 +114,7 @@
               <p>
                 <button
                   class="button"
-                  @click.prevent="$emit('action')"
+                  @click.prevent="$emit('subscribe')"
                 >
                   Subscribe
                 </button>
