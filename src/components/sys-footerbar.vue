@@ -114,7 +114,7 @@
               <p>
                 <button
                   class="button"
-                  @click.prevent="$emit('open-newsletter-modal')"
+                  @click.prevent="$emit('action')"
                 >
                   Subscribe
                 </button>
