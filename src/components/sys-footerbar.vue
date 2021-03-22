@@ -104,62 +104,79 @@
             Terms &amp; Conditions
           </component>
         </div>
+        <div :class="$style.connections">
+          <div>
+            <div
+              v-if="showNewsletterButton"
+              :class="$style.subscribe"
+            >
+              <p>Subscribe for updates on products, OS features, and promotions.</p>
+              <p>
+                <button
+                  class="button"
+                  @click.prevent="$emit('subscribe')"
+                >
+                  Subscribe
+                </button>
+              </p>
+            </div>
+            <div :class="$style.socials">
+              <a
+                aria-label="Facebook"
+                href="https://facebook.com/system76/"
+                rel="noopener"
+                target="_blank"
+                title="Facebook"
+                :class="$style.social"
+              >
+                <font-awesome-icon :icon="faFacebook" />
+              </a>
 
-        <div :class="$style.socials">
-          <a
-            aria-label="Facebook"
-            href="https://facebook.com/system76/"
-            rel="noopener"
-            target="_blank"
-            title="Facebook"
-            :class="$style.social"
-          >
-            <font-awesome-icon :icon="faFacebook" />
-          </a>
+              <a
+                aria-label="GitHub"
+                href="https://github.com/system76"
+                rel="noopener"
+                target="_blank"
+                title="GitHub"
+                :class="$style.social"
+              >
+                <font-awesome-icon :icon="faGithub" />
+              </a>
 
-          <a
-            aria-label="GitHub"
-            href="https://github.com/system76"
-            rel="noopener"
-            target="_blank"
-            title="GitHub"
-            :class="$style.social"
-          >
-            <font-awesome-icon :icon="faGithub" />
-          </a>
+              <a
+                aria-label="Instagram"
+                href="https://instagram.com/system76_com"
+                rel="noopener"
+                target="_blank"
+                title="Instagram"
+                :class="$style.social"
+              >
+                <font-awesome-icon :icon="faInstagram" />
+              </a>
 
-          <a
-            aria-label="Instagram"
-            href="https://instagram.com/system76_com"
-            rel="noopener"
-            target="_blank"
-            title="Instagram"
-            :class="$style.social"
-          >
-            <font-awesome-icon :icon="faInstagram" />
-          </a>
+              <a
+                aria-label="Telegram"
+                href="https://telegram.me/system76_news"
+                rel="noopener"
+                target="_blank"
+                title="Telegram"
+                :class="$style.social"
+              >
+                <font-awesome-icon :icon="faTelegram" />
+              </a>
 
-          <a
-            aria-label="Telegram"
-            href="https://telegram.me/system76_news"
-            rel="noopener"
-            target="_blank"
-            title="Telegram"
-            :class="$style.social"
-          >
-            <font-awesome-icon :icon="faTelegram" />
-          </a>
-
-          <a
-            aria-label="Twitter"
-            href="https://twitter.com/system76/"
-            rel="noopener"
-            target="_blank"
-            title="Twitter"
-            :class="$style.social"
-          >
-            <font-awesome-icon :icon="faTwitter" />
-          </a>
+              <a
+                aria-label="Twitter"
+                href="https://twitter.com/system76/"
+                rel="noopener"
+                target="_blank"
+                title="Twitter"
+                :class="$style.social"
+              >
+                <font-awesome-icon :icon="faTwitter" />
+              </a>
+            </div>
+          </div>
         </div>
       </nav>
 
@@ -221,6 +238,23 @@
     text-decoration: none;
   }
 
+  .connections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+
+  .subscribe {
+    text-align: center;
+    margin: 2em auto;
+    max-width: 30ch;
+  }
+
+  .subscribe > p:first-child {
+    margin: 0;
+  }
+
   .socials {
     align-content: flex-start;
     align-items: flex-start;
@@ -269,14 +303,54 @@
     font-size: 0.675rem;
   }
 
+  button {
+    border-radius: 4px;
+    background-color: #6ACAD8;
+    -webkit-font-smoothing: antialiased;
+    align-content: center;
+    align-items: center;
+    appearance: none;
+    border-radius: 0.25em;
+    border: 0.15em solid transparent;
+    cursor: pointer;
+    display: inline-flex;
+    font-style: normal;
+    font-weight: 400;
+    justify-content: center;
+    letter-spacing: 1px;
+    line-height: 24px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 100ms;
+    transition-property: background-color, border-color, box-shadow;
+    transition-timing-function: ease;
+    user-select: none;
+    letter-spacing: normal;
+    font-family: var(--font-family-sans);
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 0.4em 1.6em;
+  }
+
   @media (min-width: 50rem) {
     .links {
       flex: 0 0 15rem;
     }
 
-    .socials {
+    .connections {
       flex: 1 1 auto;
-      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .connections > div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .subscribe {
+      text-align: center;
+      margin: .5rem 0;
     }
   }
 
@@ -314,6 +388,11 @@ export default {
     backgroundClass: {
       type: String,
       default: null
+    },
+
+    showNewsletterButton: {
+      type: Boolean,
+      default: false
     },
 
     urlContact: {

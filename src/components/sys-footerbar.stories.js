@@ -25,3 +25,10 @@ export const WithText = () => ({
     </SysFooterbar>
   `
 })
+
+export const WithButton = () => ({
+  components: { SysFooterbar },
+  template: `
+    <SysFooterbar :show-newsletter-button="true" />
+  `
+})
