@@ -280,7 +280,7 @@ export default {
 
   /** Sticky responsiveness */
   @media (min-height: 400px) {
-    header {
+    .header {
       position: sticky;
       top: 0;
     }
