@@ -13,7 +13,14 @@
         title="Home"
         :class="$style.home"
       >
-        <sys-logo-type :class="$style.logo" />
+        <sys-logo-type-16bit
+          v-if="retro"
+          :class="$style.logo"
+        />
+        <sys-logo-type
+          v-else
+          :class="$style.logo"
+        />
       </component>
 
       <div :class="$style.pages">
@@ -273,14 +280,15 @@
 import { faComments, faLifeRing, faUser, faCogs, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-import { SysLogoType } from '@system76/design'
+import { SysLogoType, SysLogoType16bit } from '@system76/design'
 
 export default {
   name: 'SysHeaderbar',
 
   components: {
     FontAwesomeIcon,
-    SysLogoType
+    SysLogoType,
+    SysLogoType16bit
   },
 
   props: {
@@ -297,6 +305,11 @@ export default {
     backgroundClass: {
       type: String,
       default: null
+    },
+
+    retro: {
+      type: Boolean,
+      default: false
     },
 
     urlHomepage: {
