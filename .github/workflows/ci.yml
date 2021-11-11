@@ -10,12 +10,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16
 
       - name: Install
         run: npm ci
@@ -29,12 +29,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16
 
       - name: Install
         run: npm ci
@@ -47,12 +47,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16
 
       - name: Cache
         uses: actions/cache@v1
@@ -83,12 +83,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16
 
       - name: Setup xvfb
         run: sudo apt-get install -y xvfb
@@ -137,12 +137,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16
 
       - name: Cache
         uses: actions/cache@v1
@@ -175,25 +175,31 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
-      - name: Cache
-        uses: actions/cache@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          path: docs
-          key: ${{ github.run_id }}-docs
+          node-version: 16
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          NODE_ENV: production
 
       - name: Setup Hosting
         run: |
-          touch docs/.nojekyll &&
-          echo "components.origin76.com" > docs/CNAME
+          touch docs/.nojekyll
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          PERSONAL_TOKEN: ${{ secrets.GITHUB_KEY }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          cname: components.origin76.com
+          github_token: ${{ secrets.RELEASE_TOKEN }}
+          publish_dir: ./docs
 
   Deploy_Package:
     name: Deploy (NPM Package)
@@ -207,12 +213,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16
 
       - name: Install
         run: npm ci

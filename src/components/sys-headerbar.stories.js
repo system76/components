@@ -30,3 +30,10 @@ export const LoggedInAdmin = () => ({
     <SysHeaderbar :authenticated="true" :admin="true" />
   `
 })
+
+export const Retro = () => ({
+  components: { SysHeaderbar },
+  template: `
+    <SysHeaderbar retro />
+  `
+})
