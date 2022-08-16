@@ -155,17 +155,6 @@
               </a>
 
               <a
-                aria-label="Telegram"
-                href="https://telegram.me/system76_news"
-                rel="noopener"
-                target="_blank"
-                title="Telegram"
-                :class="$style.social"
-              >
-                <font-awesome-icon :icon="faTelegram" />
-              </a>
-
-              <a
                 aria-label="Twitter"
                 href="https://twitter.com/system76/"
                 rel="noopener"
@@ -374,7 +363,7 @@
 </style>
 
 <script>
-import { faFacebook, faGithub, faInstagram, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faFacebook, faGithub, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 export default {
@@ -450,7 +439,6 @@ export default {
     faFacebook: () => faFacebook,
     faGithub: () => faGithub,
     faInstagram: () => faInstagram,
-    faTelegram: () => faTelegram,
     faTwitter: () => faTwitter
   },
 
