@@ -18,7 +18,7 @@ jobs:
           node-version: 16
 
       - name: Install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Lint
         run: npm run lint
@@ -37,7 +37,7 @@ jobs:
           node-version: 16
 
       - name: Install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Test
         run: npm run test
@@ -61,7 +61,7 @@ jobs:
           key: ${{ github.run_id }}-docs
 
       - name: Install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build
         run: npm run build
@@ -100,7 +100,7 @@ jobs:
           key: ${{ github.run_id }}-docs
 
       - name: Install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Test
         run: |
@@ -151,7 +151,7 @@ jobs:
           key: ${{ github.run_id }}-docs
 
       - name: Install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Test
         run: npx testcafe ${{ matrix.browser }} test/browser/**
@@ -183,7 +183,7 @@ jobs:
           node-version: 16
 
       - name: Install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build
         run: npm run build
@@ -221,7 +221,7 @@ jobs:
           node-version: 16
 
       - name: Install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build
         run: npm run build
