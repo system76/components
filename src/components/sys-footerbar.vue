@@ -122,6 +122,17 @@
             </div>
             <div :class="$style.socials">
               <a
+                aria-label="RSS"
+                href="https://blog.system76.com/rss.xml"
+                rel="noopener"
+                target="_blank"
+                title="Blog RSS Feed"
+                :class="$style.social"
+              >
+                <font-awesome-icon :icon="faRssSquare" />
+              </a>
+
+              <a
                 aria-label="Facebook"
                 href="https://facebook.com/system76/"
                 rel="noopener"
@@ -364,6 +375,7 @@
 
 <script>
 import { faFacebook, faGithub, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faRssSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 export default {
@@ -439,6 +451,7 @@ export default {
     faFacebook: () => faFacebook,
     faGithub: () => faGithub,
     faInstagram: () => faInstagram,
+    faRssSquare: () => faRssSquare,
     faTwitter: () => faTwitter
   },
 
