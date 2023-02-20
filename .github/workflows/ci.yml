@@ -229,7 +229,7 @@ jobs:
           NODE_ENV: production
 
       - name: Deploy
-        run: npx semantic-release
+        run: npx -p node@v18-lts -c "npx semantic-release"
         env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
