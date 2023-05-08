@@ -57,6 +57,14 @@
         </component>
 
         <component
+          :is="linkComponent(urlKeyboards)"
+          v-bind="linkAttributes(urlKeyboards)"
+          :class="$style.page"
+        >
+          keyboards
+        </component>
+
+        <component
           :is="linkComponent(urlPopOs)"
           v-bind="linkAttributes(urlPopOs)"
           :class="$style.page"
@@ -335,6 +343,11 @@ export default {
     urlServers: {
       type: String,
       default: '/servers'
+    },
+
+    urlKeyboards: {
+      type: String,
+      default: '/accessories/launch'
     },
 
     urlPopOs: {
