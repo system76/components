@@ -57,6 +57,14 @@
         </component>
 
         <component
+          :is="linkComponent(urlComponents)"
+          v-bind="linkAttributes(urlComponents)"
+          :class="$style.page"
+        >
+          components
+        </component>
+
+        <component
           :is="linkComponent(urlKeyboards)"
           v-bind="linkAttributes(urlKeyboards)"
           :class="$style.page"
@@ -343,6 +351,11 @@ export default {
     urlServers: {
       type: String,
       default: '/servers'
+    },
+
+    urlComponents: {
+      type: String,
+      default: '/components'
     },
 
     urlKeyboards: {
