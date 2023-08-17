@@ -23,14 +23,6 @@
             Support
           </a>
 
-          <component
-            :is="linkComponent(urlAbout)"
-            v-bind="linkAttributes(urlAbout)"
-            :class="$style.link"
-          >
-            About Us
-          </component>
-
           <a
             href="http://blog.system76.com"
             :class="$style.link"
@@ -45,7 +37,9 @@
           >
             Careers
           </component>
+        </div>
 
+        <div :class="$style.links">
           <component
             :is="linkComponent(urlSpecials)"
             v-bind="linkAttributes(urlSpecials)"
@@ -53,31 +47,13 @@
           >
             Specials
           </component>
-        </div>
-
-        <div :class="$style.links">
-          <component
-            :is="linkComponent(urlShipping)"
-            v-bind="linkAttributes(urlShipping)"
-            :class="$style.link"
-          >
-            Shipping Information
-          </component>
 
           <component
-            :is="linkComponent(urlFinancing)"
-            v-bind="linkAttributes(urlFinancing)"
+            :is="linkComponent(urlAbout)"
+            v-bind="linkAttributes(urlAbout)"
             :class="$style.link"
           >
-            Financing
-          </component>
-
-          <component
-            :is="linkComponent(urlWarranty)"
-            v-bind="linkAttributes(urlWarranty)"
-            :class="$style.link"
-          >
-            Warranty &amp; Returns
+            About Us
           </component>
 
           <component
@@ -85,23 +61,15 @@
             v-bind="linkAttributes(urlPrivacy)"
             :class="$style.link"
           >
-            Privacy Policy
+            Privacy & Legal
           </component>
 
           <component
-            :is="linkComponent(urlDisclaimer)"
-            v-bind="linkAttributes(urlDisclaimer)"
+            :is="linkComponent(urlShipping)"
+            v-bind="linkAttributes(urlShipping)"
             :class="$style.link"
           >
-            Disclaimer
-          </component>
-
-          <component
-            :is="linkComponent(urlTerms)"
-            v-bind="linkAttributes(urlTerms)"
-            :class="$style.link"
-          >
-            Terms &amp; Conditions
+            Shipping
           </component>
         </div>
         <div :class="$style.connections">
@@ -421,29 +389,9 @@ export default {
       default: '/shipping'
     },
 
-    urlFinancing: {
-      type: String,
-      default: '/financing'
-    },
-
-    urlWarranty: {
-      type: String,
-      default: '/warranty'
-    },
-
     urlPrivacy: {
       type: String,
-      default: '/privacy'
-    },
-
-    urlDisclaimer: {
-      type: String,
-      default: '/disclaimer'
-    },
-
-    urlTerms: {
-      type: String,
-      default: '/terms'
+      default: '/privacy-and-legal'
     }
   },
 
