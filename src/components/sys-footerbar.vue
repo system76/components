@@ -23,12 +23,13 @@
             Support
           </a>
 
-          <a
-            href="http://blog.system76.com"
+          <component
+            :is="linkComponent(urlShipping)"
+            v-bind="linkAttributes(urlShipping)"
             :class="$style.link"
           >
-            Blog
-          </a>
+            Shipping
+          </component>
 
           <component
             :is="linkComponent(urlCareers)"
@@ -41,19 +42,19 @@
 
         <div :class="$style.links">
           <component
-            :is="linkComponent(urlSpecials)"
-            v-bind="linkAttributes(urlSpecials)"
-            :class="$style.link"
-          >
-            Specials
-          </component>
-
-          <component
             :is="linkComponent(urlAbout)"
             v-bind="linkAttributes(urlAbout)"
             :class="$style.link"
           >
             About Us
+          </component>
+
+          <component
+            :is="linkComponent(urlSustainability)"
+            v-bind="linkAttributes(urlSustainability)"
+            :class="$style.link"
+          >
+            Sustainability
           </component>
 
           <component
@@ -64,13 +65,12 @@
             Privacy & Legal
           </component>
 
-          <component
-            :is="linkComponent(urlShipping)"
-            v-bind="linkAttributes(urlShipping)"
+          <a
+            href="http://blog.system76.com"
             :class="$style.link"
           >
-            Shipping
-          </component>
+            Blog
+          </a>
         </div>
         <div :class="$style.connections">
           <div>
@@ -379,9 +379,9 @@ export default {
       default: '/careers'
     },
 
-    urlSpecials: {
+    urlSustainability: {
       type: String,
-      default: '/specials'
+      default: '/sustainability'
     },
 
     urlShipping: {
