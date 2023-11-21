@@ -57,19 +57,19 @@
         </component>
 
         <component
-          :is="linkComponent(urlComponents)"
-          v-bind="linkAttributes(urlComponents)"
-          :class="$style.page"
-        >
-          components
-        </component>
-
-        <component
           :is="linkComponent(urlKeyboards)"
           v-bind="linkAttributes(urlKeyboards)"
           :class="$style.page"
         >
           keyboards
+        </component>
+
+        <component
+          :is="linkComponent(urlComponents)"
+          v-bind="linkAttributes(urlComponents)"
+          :class="$style.page"
+        >
+          components
         </component>
 
         <component
