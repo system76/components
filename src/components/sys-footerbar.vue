@@ -123,11 +123,11 @@
               </a>
 
               <a
-                aria-label="Facebook"
+                aria-label="YouTube"
                 href="https://www.youtube.com/system76/"
                 rel="noopener"
                 target="_blank"
-                title="Facebook"
+                title="YouTube"
                 :class="$style.social"
               >
                 <font-awesome-icon :icon="faYoutubeSquare" />
@@ -353,7 +353,7 @@
 </style>
 
 <script>
-import { faFacebook, faGithub, faInstagram, faLinkedin, faYoutubeSquare, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faInstagram, faLinkedin, faYoutubeSquare, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faRssSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -407,7 +407,6 @@ export default {
   },
 
   computed: {
-    faFacebook: () => faFacebook,
     faGithub: () => faGithub,
     faInstagram: () => faInstagram,
     faLinkedin: () => faLinkedin,
