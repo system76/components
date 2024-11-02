@@ -101,14 +101,14 @@
               </a>
 
               <a
-                aria-label="Facebook"
-                href="https://facebook.com/system76/"
+                aria-label="LinkedIn"
+                href="https://www.linkedin.com/company/system76"
                 rel="noopener"
                 target="_blank"
-                title="Facebook"
+                title="LinkedIn"
                 :class="$style.social"
               >
-                <font-awesome-icon :icon="faFacebook" />
+                <font-awesome-icon :icon="faLinkedin" />
               </a>
 
               <a
@@ -123,6 +123,17 @@
               </a>
 
               <a
+                aria-label="YouTube"
+                href="https://www.youtube.com/system76/"
+                rel="noopener"
+                target="_blank"
+                title="YouTube"
+                :class="$style.social"
+              >
+                <font-awesome-icon :icon="faYoutubeSquare" />
+              </a>
+
+              <a
                 aria-label="Instagram"
                 href="https://instagram.com/system76_com"
                 rel="noopener"
@@ -134,14 +145,14 @@
               </a>
 
               <a
-                aria-label="Twitter"
-                href="https://twitter.com/system76/"
+                aria-label="X (formerly Twitter)"
+                href="https://x.com/system76/"
                 rel="noopener"
                 target="_blank"
-                title="Twitter"
+                title="X (formerly Twitter)"
                 :class="$style.social"
               >
-                <font-awesome-icon :icon="faTwitter" />
+                <font-awesome-icon :icon="faSquareXTwitter" />
               </a>
             </div>
           </div>
@@ -342,7 +353,7 @@
 </style>
 
 <script>
-import { faFacebook, faGithub, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faInstagram, faLinkedin, faYoutubeSquare, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faRssSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -396,11 +407,12 @@ export default {
   },
 
   computed: {
-    faFacebook: () => faFacebook,
     faGithub: () => faGithub,
     faInstagram: () => faInstagram,
+    faLinkedin: () => faLinkedin,
     faRssSquare: () => faRssSquare,
-    faTwitter: () => faTwitter
+    faYoutubeSquare: () => faYoutubeSquare,
+    faSquareXTwitter: () => faSquareXTwitter
   },
 
   methods: {
